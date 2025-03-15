@@ -27,7 +27,7 @@ import os
     
 #     st.session_state.firebase_initialized = True
 
-cred = credentials.Certificate(r"C:\steil\brain-coral-vocab-firebase-adminsdk-c6g3m-b019f7d8ba.json")
+cred = credentials.Certificate(r"brain-coral-vocab-firebase-adminsdk-c6g3m-b019f7d8ba.json")
 
 if not firebase_admin._apps:
     firebase_admin.initialize_app(cred)
