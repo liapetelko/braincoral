@@ -25,7 +25,7 @@ st.markdown(
 st.header("Practice words")
 
 
-
+import os
 import base64
 import json
 from firebase_admin import credentials
