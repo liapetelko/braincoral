@@ -8,7 +8,7 @@ import random
 import firebase_admin
 from firebase_admin import credentials
 from firebase_admin import firestore
-cred = credentials.Certificate(r"C:\steil\brain-coral-vocab-firebase-adminsdk-c6g3m-508d9f95ae.json")
+cred = credentials.Certificate(r"brain-coral-vocab-firebase-adminsdk-c6g3m-508d9f95ae.json")
 if not firebase_admin._apps:
     firebase_admin.initialize_app(cred)
 
