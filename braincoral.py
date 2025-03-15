@@ -24,13 +24,16 @@ st.markdown(
 )
 st.header("Practice words")
 
+
+
+import base64
 import json
-import os
 from firebase_admin import credentials
 
-cred_json = os.getenv("FIREBASE_CREDENTIALS")
-if cred_json:
-    cred = credentials.Certificate(json.loads(cred_json))
+firebase_credentials = os.getenv("FIREBASE_CREDENTIALS")
+if firebase_credentials:
+    cred_dict = json.loads(base64.b64decode(firebase_credentials).decode("utf-8"))
+    cred = credentials.Certificate(cred_dict)
     firebase_admin.initialize_app(cred)
 else:
     raise RuntimeError("Missing Firebase credentials in environment.")
