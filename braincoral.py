@@ -24,20 +24,6 @@ st.markdown(
 )
 st.header("Practice words")
 
-
-import os
-import base64
-import json
-from firebase_admin import credentials
-
-firebase_credentials = os.getenv("FIREBASE_CREDENTIALS")
-if firebase_credentials:
-    cred_dict = json.loads(base64.b64decode(firebase_credentials).decode("utf-8"))
-    cred = credentials.Certificate(cred_dict)
-    firebase_admin.initialize_app(cred)
-else:
-    raise RuntimeError("Missing Firebase credentials in environment.")
-
 def get_words_from_firestore():
     words_ref = brain.collection("words").stream()
     words = []
