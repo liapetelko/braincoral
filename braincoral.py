@@ -145,13 +145,17 @@ btnAddNew = st.button("Add Word")
 if btnAddNew:
     add_word_to_firestore(newWordEnglish, newWordHebrew)
 
-st.subheader("Add multiple words")
-words_list = st.text_area("Words list (hebrew-english structure)")
-lines = words_list.strip().split('\n')
+if st.button("Add multiple words"):
+    st.subheader("Add multiple words")
+    words_list = st.text_area("Words list (hebrew-english structure)")
+    lines = words_list.strip().split('\n')
 
-if st.button("Add Multipule Words"):
-    for line in lines:
-        english_word, hebrew_word = line.split('\t')
-        add_word_to_firestore(hebrew_word.strip(), english_word.strip())
+    if st.button("Add Multipule Words"):
+        for line in lines:
+            english_word, hebrew_word = line.split('\t')
+            add_word_to_firestore(hebrew_word.strip(), english_word.strip())
+
+
+
 
 
