@@ -114,7 +114,7 @@ with colbtnNextWord:
     btnNextWord = st.button("Next word ➤")
     if btnNextWord:
         st.session_state.current_word = random.choice(words)
-        st.experimental_rerun()
+        st.rerun()
 
 st.markdown("---")
 def add_word_to_firestore(english_word, hebrew_word):
